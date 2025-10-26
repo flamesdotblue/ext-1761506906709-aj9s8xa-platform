@@ -1,28 +1,34 @@
-import { useState } from 'react'
+import React from 'react';
+import Hero from './components/Hero';
+import Principles from './components/Principles';
+import MeditateSection from './components/MeditateSection';
+import Quotes from './components/Quotes';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen text-slate-800 font-inter bg-gradient-to-b from-sky-50 via-white to-sky-50">
+      <Hero />
+      <main className="relative z-10">
+        <section id="principles" className="px-6 md:px-10 max-w-6xl mx-auto -mt-24 md:-mt-32">
+          <Principles />
+        </section>
+        <section id="meditate" className="px-6 md:px-10 max-w-6xl mx-auto mt-16 md:mt-24">
+          <MeditateSection />
+        </section>
+        <section id="wisdom" className="px-6 md:px-10 max-w-6xl mx-auto mt-16 md:mt-24 mb-20">
+          <Quotes />
+        </section>
+      </main>
+      <footer className="px-6 md:px-10 py-10 text-center text-slate-600">
+        <div className="max-w-6xl mx-auto">
+          <div className="mx-auto inline-flex items-center gap-2 rounded-full bg-white/40 backdrop-blur-md border border-white/30 px-4 py-2 shadow-sm">
+            <span className="text-sm">Made with calm and clarity</span>
+          </div>
+          <p className="mt-4 text-xs">© {new Date().getFullYear()} Serene Buddhism</p>
         </div>
-      </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
